@@ -12,10 +12,13 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - run: echo Hello there ${{ inputs.who-to-greet }}.  
+    - run: echo Hello there ${{ inputs.who-to-greet }}.
+      shell: bash
     - id: random-number-generator
-      run: echo "::set-output name=random-id::$(echo $RANDOM)"   
+      run: echo "::set-output name=random-id::$(echo $RANDOM)" 
+      shell: bash
     - name: Delete cache file from composite
       run: rm -rf /tmp/docker-cache
+      shell: bash
 
       
