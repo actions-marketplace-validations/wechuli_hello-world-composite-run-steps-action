@@ -20,5 +20,7 @@ runs:
     - name: Delete cache file from composite
       run: rm -rf /tmp/docker-cache
       shell: bash
+    - name: Echo something random
+      run: echo hello there
 
       
