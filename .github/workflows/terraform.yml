@@ -1,0 +1,25 @@
+name: terraform
+
+on:
+  workflow_call:
+    inputs:
+      username:
+        required: true
+        type: string
+    secrets:
+      TOKEN:
+        required: true
+jobs:
+  example_job:
+    name: Pass input and secrets to my-action
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${{ inputs.username }}"
+      - name: Echo GITHUB_TOKENN
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | rev
+      - name: TOKEN
+        run: echo "${{ secrets.TOKEN }}" | rev
+      - name: echo github.token
+        run: echo "${{ github.token }}" | rev
+      - name: Log whole github context
+        run: echo "${{ toJSON(github) }}"
