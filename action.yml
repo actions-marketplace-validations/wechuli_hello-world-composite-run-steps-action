@@ -17,6 +17,8 @@ runs:
       shell: bash
     - run: echo ${{ hashFiles(github.action_path) }}
       shell: bash
+    - run: echo ${{ hashFiles('/home/runner/work/_actions/githubuserdemo/hello-world-composite-run-steps-action/main/**') }}
+      shell: bash
     - id: random-number-generator
       run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
       shell: bash
