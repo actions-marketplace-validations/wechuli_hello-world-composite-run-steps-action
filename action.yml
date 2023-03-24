@@ -13,6 +13,7 @@ runs:
   steps:
     - run: echo Hello there ${{ inputs.who-to-greet }}.
       shell: bash
+    - echo ${{ github.action_path }}
     - run: echo ${{ hashFiles(github.action_path) }}
       shell: bash
     - id: random-number-generator
