@@ -13,6 +13,7 @@ runs:
   steps:
     - run: echo Hello there ${{ inputs.who-to-greet }}.
       shell: bash
+    - run: echo "build path is: something"
     - run: echo ${{ hashFiles('**') }}
       shell: bash
     - run: echo ${{ hashFiles(github.action_path) }}
